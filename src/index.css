@@ -4,14 +4,20 @@
   --text-color: #000000;
   --button-bg: var(--primary-color);
   --button-text: var(--text-color);
+  --code-background: #f9f9f7ba;
 }
 
 body.dark {
-  --primary-color: #f9f4e7;
-  --bg-color: #4A2E2C;
-  --text-color: #f9f4e7;
-  --button-bg: var(--primary-color);
-  --button-text: var(--text-color);
+  --primary-color: #3e2f2f;     /* deep espresso brown */
+  --bg-color: #1d1515;          /* dark roast background */
+  --text-color: #e0cfc2;        /* cream text */
+  --button-bg: #6e4e37;         /* mocha brown for buttons */
+  --button-text: #f6f0e8;       /* light pastel cream */
+  --code-background: #3e2f2f8f;
+  --accent-color: #a67c6b;      /* dusty rose accent */
+  --border-color: #4d3b3b;      /* slightly lighter than background */
+
+  transition: all 0.2s ease-in-out;
 }
 
 body {
@@ -23,6 +29,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-color);
   color: var(--text-color);
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 /* Editor outline fix */

@@ -51,7 +51,6 @@ function LoadNoteButton({ onLoadContent }) {
         }}
       >
         <Upload size={20} color="white" />
-        Load
       </button>
     </>
   );

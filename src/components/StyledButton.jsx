@@ -140,7 +140,7 @@ function StyledButton({ editor }) {
         gap: "12px",
         alignItems: "center",
         padding: "16px 20px",
-        backgroundColor: "#f9f4e7",
+        backgroundColor: "--bg-color",
         borderTop: "none",
         border: "1px solid #e5e5e7",
         borderBottomLeftRadius: "12px",

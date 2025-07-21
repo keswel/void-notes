@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import NoteEditor from "./components/NoteEditor";
 import StyledButton from "./components/StyledButton";
 import Header from "./components/Header";
-import ThemeButton from "./components/ThemeButton";
 
 function App() {
   const [editor, setEditor] = useState(null);

@@ -127,7 +127,8 @@ function NoteEditor({ onEditorReady, contentToLoad }) {
         border: "1px solid #ccc",
         borderTopLeftRadius: "12px",
         borderTopRightRadius: "12px",
-        backgroundColor: "#f7f3e9",
+        borderColor: "--border-color",
+        backgroundColor: "--bg-color",
         fontSize: "16px",
         lineHeight: "1.5",
         minHeight: "300px",
@@ -159,7 +160,7 @@ function NoteEditor({ onEditorReady, contentToLoad }) {
           }
 
           .ProseMirror pre {
-            background: #f6f8fa;
+            background: var(--code-background);
             border-radius: 8px;
             padding: 16px;
             margin: 12px 0;
