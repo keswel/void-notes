@@ -136,7 +136,7 @@ function NoteEditor({ onEditorReady, contentToLoad }) {
     >
       <style>
         {`
-          @import url('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css');
+          @import url('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/gruvbox-dark-hard.min.css');
 
           .ProseMirror p.is-editor-empty:first-child::before {
             content: attr(data-placeholder);
