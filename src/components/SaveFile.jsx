@@ -1,5 +1,12 @@
+import React from 'react';
+import { Save } from 'lucide-react'; 
+
 function SaveFile({ editor }) {
   const [isHovered, setIsHovered] = React.useState(false);
+
+  const getHoverStyle = (isHovered, baseColor, hoverColor) => ({
+    /* hover style implementation */
+  });
 
   const handleSave = () => {
     console.log('Save button clicked!');
@@ -41,3 +48,5 @@ function SaveFile({ editor }) {
     </button>
   );
 }
+
+export default SaveFile;

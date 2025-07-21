@@ -1,7 +1,11 @@
 import VoidEditor from "./components/VoidEditor.jsx";
 
 function App() {
-  /**
+  /*
+   * TODO:
+   *  Add a title manager (holds title string) inside of VoidEditor;
+   *  Remember that the SaveFile button is held in StyledButton not SaveFile.jsx;
+   *
    * [ ] UPDATE INIT TEXT WITH:
    * void notes:
    * the ultimate minimalist note-taking app!
