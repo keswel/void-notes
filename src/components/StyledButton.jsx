@@ -81,7 +81,7 @@ function SaveFile({ editor }) {
   );
 }
 
-// Clear Button
+// clear button
 function ClearButton({ editor }) {
   const [isHovered, setIsHovered] = React.useState(false);
 
@@ -109,13 +109,13 @@ function ClearButton({ editor }) {
   );
 }
 
-// Share Button
+// share Button
 function ShareButton() {
   const [isHovered, setIsHovered] = React.useState(false);
 
   const handleShare = () => {
     console.log("Share button clicked!");
-    // Add your share logic here
+      // share logic
   };
 
   return (
@@ -131,7 +131,7 @@ function ShareButton() {
   );
 }
 
-// Main button bar
+// main button bar
 function StyledButton({ editor }) {
   return (
     <div

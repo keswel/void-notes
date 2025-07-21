@@ -2,6 +2,7 @@ import { FileText } from 'lucide-react';
 import ThemeButton from './ThemeButton';
 import { Plus } from 'lucide-react';
 import LoadNoteButton from './LoadNoteButton';
+import TitleText from './TitleText';
 
 function Header({ onLoadContent }) {
   return (
@@ -27,7 +28,8 @@ function Header({ onLoadContent }) {
         <FileText size={28} color="#6b4f26" />
         void notes
       </h1>
-      title of note
+      
+      <TitleText/>
       <div
         style={{
           display: 'flex',
