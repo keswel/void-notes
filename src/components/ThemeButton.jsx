@@ -9,37 +9,31 @@ function ThemeButton() {
   }, [isDark]);
 
   return (
-    <div style={{
-      position: 'fixed',
-      top: '16px',
-      right: '16px',
-      zIndex: 1000,
-    }}>
-      <button
-        onClick={() => setIsDark(!isDark)}
-        aria-label="Toggle theme"
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '8px',
-          border: '1px solid var(--text-color)',
-          borderRadius: '4px',
-          cursor: 'pointer',
-          color: 'var(--text-color)',
-          backgroundColor: 'transparent',
-          transition: 'background-color 0.3s ease, color 0.3s ease',
-          width: '40px',
-          height: '40px',
-        }}
-      >
-        {isDark ? (
-          <Sun size={20} color="var(--text-color)" />
-        ) : (
-          <MoonStar size={20} color="var(--text-color)" />
-        )}
-      </button>
-    </div>
+    <button
+      onClick={() => setIsDark(!isDark)}
+      aria-label="Toggle theme"
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '0.5rem 1rem',
+        border: 'none',
+        borderRadius: '8px',
+        cursor: 'pointer',
+        backgroundColor: '#6b4f26',
+        color: 'white',
+        fontSize: '1.2rem',
+        transition: 'background-color 0.3s ease, color 0.3s ease',
+        width: '40px',
+        height: '40px',
+      }}
+    >
+      {isDark ? (
+        <Sun size={20} color="white" />
+      ) : (
+        <MoonStar size={20} color="white" />
+      )}
+    </button>
   );
 }
 

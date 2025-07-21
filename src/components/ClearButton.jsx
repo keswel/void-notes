@@ -5,7 +5,7 @@ function ClearButton({ editor }) {
   const handleClear = () => {
     if (editor) {
       editor.commands.clearContent();
-      editor.commands.focus(); // Optional: keep focus on editor after clearing
+      editor.commands.focus();
     }
   };
 

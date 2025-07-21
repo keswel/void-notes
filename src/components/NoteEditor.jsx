@@ -38,17 +38,17 @@ const TabIndent = Extension.create({
   addKeyboardShortcuts() {
     return {
       Tab: () => {
-        return this.editor.commands.insertContent("    ");
+        return this.editor.commands.insertContent("     ");
       },
       "Shift-Tab": () => {
         const { state } = this.editor;
         const { selection } = state;
         const { from } = selection;
 
-        const textBefore = state.doc.textBetween(Math.max(0, from - 4), from);
+        const textBefore = state.doc.textBetween(Math.max(0, from - 5), from);
         if (textBefore === "    ") {
           return this.editor.commands.deleteRange({
-            from: from - 4,
+            from: from - 5,
             to: from,
           });
         }
@@ -58,7 +58,7 @@ const TabIndent = Extension.create({
         const lineText = line.textContent;
         let spacesToRemove = 0;
 
-        for (let i = 0; i < Math.min(4, lineText.length); i++) {
+        for (let i = 0; i < Math.min(5, lineText.length); i++) {
           if (lineText[i] === " ") {
             spacesToRemove++;
           } else {
@@ -79,7 +79,6 @@ const TabIndent = Extension.create({
   },
 });
 
-// Extend Highlight extension to add Mod-H shortcut
 const HighlightWithShortcut = Highlight.extend({
   addKeyboardShortcuts() {
     return {

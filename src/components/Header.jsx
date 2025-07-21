@@ -1,5 +1,6 @@
 import React from 'react';
 import { FileText } from 'lucide-react';
+import ThemeButton from './ThemeButton';
 
 function Header() {
   return (
@@ -42,12 +43,15 @@ function Header() {
       cursor: 'pointer',
     }}
     onClick={() => {
-      // Load note logic
+      // load note logic
       console.log('Load Note Clicked');
     }}
   >
     Load
       </button>
+      
+      <ThemeButton />
+
       <button
         style={{
           backgroundColor: '#6b4f26',
@@ -64,6 +68,7 @@ function Header() {
       >
         +
       </button>
+          
     </div>
     </div>
   );

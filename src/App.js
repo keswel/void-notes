@@ -24,10 +24,7 @@ function App() {
     */
     
   <div style={{ padding: "2rem", position: "relative", maxWidth: "700px", margin: "auto" }}>
-  {/* theme selector button */}
-  <div>
-    <ThemeButton/>
-  </div>
+ 
   {/* main editor stack */}
   <div>
     <Header />
