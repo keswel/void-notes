@@ -1,10 +1,19 @@
-import { FileText } from 'lucide-react';
+import { FileText, Plus } from 'lucide-react';
 import ThemeButton from './ThemeButton';
-import { Plus } from 'lucide-react';
 import LoadNoteButton from './LoadNoteButton';
 import TitleText from './TitleText';
 
-function Header({ onLoadContent }) {
+function Header({ onLoadContent, editor }) {
+  // clear function declared once inside Header
+  const handleClear = () => {
+    if (editor) {
+      editor.commands.clearContent();
+      editor.commands.focus();
+    } else {
+      console.warn('Editor instance not available');
+    }
+  };
+
   return (
     <div
       style={{
@@ -20,7 +29,7 @@ function Header({ onLoadContent }) {
           alignItems: 'center',
           gap: '10px',
           fontSize: '2rem',
-          color: '#6b4f26', // coffee brown
+          color: '#6b4f26',
           userSelect: 'none',
           margin: 0,
         }}
@@ -28,8 +37,9 @@ function Header({ onLoadContent }) {
         <FileText size={28} color="#6b4f26" />
         void notes
       </h1>
-      
-      <TitleText/>
+
+      <TitleText />
+
       <div
         style={{
           display: 'flex',
@@ -50,6 +60,7 @@ function Header({ onLoadContent }) {
           }}
           onClick={() => {
             console.log('New Note Clicked');
+            handleClear(); // Call the function here!
           }}
         >
           <Plus size={20} color="white" />

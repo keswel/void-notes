@@ -30,7 +30,7 @@ const getHoverStyle = (isHovered, baseColor, hoverColor) => ({
     : "0 2px 8px rgba(0, 0, 0, 0.1)",
 });
 
-// ✅ Save Button
+// save Button
 function SaveFile({ editor }) {
   const [isHovered, setIsHovered] = React.useState(false);
 

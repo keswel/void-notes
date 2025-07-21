@@ -30,7 +30,7 @@ function App() {
     <div style={{ padding: "2rem", position: "relative", maxWidth: "700px", margin: "auto" }}>
       {/* main editor stack */}
       <div>
-        <Header onLoadContent={handleLoadContent} />
+        <Header onLoadContent={handleLoadContent} editor={editor}/>
         <NoteEditor onEditorReady={setEditor} contentToLoad={contentToLoad} />
         <StyledButton editor={editor} />
       </div>
