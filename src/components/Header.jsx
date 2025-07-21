@@ -2,16 +2,30 @@ import { FileText, Plus } from 'lucide-react';
 import ThemeButton from './ThemeButton';
 import LoadNoteButton from './LoadNoteButton';
 import TitleText from './TitleText';
+import React, { useState } from 'react';
 
 function Header({ onLoadContent, editor }) {
-  // clear function declared once inside Header
+  const [title, setTitle] = useState('title');  // initial title state
+
   const handleClear = () => {
     if (editor) {
       editor.commands.clearContent();
       editor.commands.focus();
+      console.log("Cleared editor.");
     } else {
-      console.warn('Editor instance not available');
+      console.log("No access to editor.");
     }
+  };
+
+  const handleNewNoteClick = () => {
+    console.log('New Note Clicked');
+    handleClear();
+    setTitle('title');  // reset title to 'title'
+  };
+
+  // this will be passed to TitleText to update title as user types
+  const handleTitleChange = (newTitle) => {
+    setTitle(newTitle);
   };
 
   return (
@@ -38,7 +52,8 @@ function Header({ onLoadContent, editor }) {
         void notes
       </h1>
 
-      <TitleText />
+      {/* pass title and onChangeTitle callback */}
+      <TitleText title={title} onChangeTitle={handleTitleChange} />
 
       <div
         style={{
@@ -60,7 +75,7 @@ function Header({ onLoadContent, editor }) {
           }}
           onClick={() => {
             console.log('New Note Clicked');
-            handleClear(); // Call the function here!
+            handleNewNoteClick();
           }}
         >
           <Plus size={20} color="white" />

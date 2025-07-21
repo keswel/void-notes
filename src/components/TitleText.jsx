@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 
-function TitleText() {
-  const [text, setText] = useState('title');
+function TitleText({ title, onChangeTitle }) {
   const [editing, setEditing] = useState(false);
 
   const handleBlur = () => setEditing(false);
-  const handleChange = (e) => setText(e.target.value);
+
+  const handleChange = (e) => {
+    onChangeTitle(e.target.value);  // notify parent about change
+  };
 
   return (
     <div>
       {editing ? (
         <input
-          value={text}
+          value={title}
           onChange={handleChange}
           onBlur={handleBlur}
           autoFocus
@@ -33,7 +35,7 @@ function TitleText() {
           onMouseOver={(e) => (e.currentTarget.style.border = '1px dashed #aaa')}
           onMouseOut={(e) => (e.currentTarget.style.border = '1px dashed transparent')}
         >
-          {text}
+          {title}
         </p>
       )}
     </div>
