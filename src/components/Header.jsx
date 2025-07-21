@@ -1,8 +1,9 @@
-import React from 'react';
 import { FileText } from 'lucide-react';
 import ThemeButton from './ThemeButton';
+import { Plus } from 'lucide-react';
+import LoadNoteButton from './LoadNoteButton';
 
-function Header() {
+function Header({ onLoadContent }) {
   return (
     <div
       style={{
@@ -26,50 +27,32 @@ function Header() {
         <FileText size={28} color="#6b4f26" />
         void notes
       </h1>
-<div
-  style={{
-    display: 'flex',
-    gap: '8px',
-  }}
->
-  <button
-    style={{
-      backgroundColor: '#6b4f26',
-      color: 'white',
-      border: 'none',
-      borderRadius: '8px',
-      padding: '0.5rem 1rem',
-      fontSize: '1rem',
-      cursor: 'pointer',
-    }}
-    onClick={() => {
-      // load note logic
-      console.log('Load Note Clicked');
-    }}
-  >
-    Load
-      </button>
-      
-      <ThemeButton />
-
-      <button
+      title of note
+      <div
         style={{
-          backgroundColor: '#6b4f26',
-          color: 'white',
-          border: 'none',
-          borderRadius: '8px',
-          padding: '0.5rem 1rem',
-          fontSize: '1.2rem',
-          cursor: 'pointer',
-        }}
-          onClick={() => {
-          console.log('New Note Clicked');
+          display: 'flex',
+          gap: '8px',
         }}
       >
-        +
-      </button>
-          
-    </div>
+        <ThemeButton />
+        <LoadNoteButton onLoadContent={onLoadContent} />
+        <button
+          style={{
+            backgroundColor: '#6b4f26',
+            color: 'white',
+            border: 'none',
+            borderRadius: '8px',
+            padding: '0.5rem 1rem',
+            fontSize: '1.2rem',
+            cursor: 'pointer',
+          }}
+          onClick={() => {
+            console.log('New Note Clicked');
+          }}
+        >
+          <Plus size={20} color="white" />
+        </button>
+      </div>
     </div>
   );
 }

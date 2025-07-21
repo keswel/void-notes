@@ -87,7 +87,7 @@ const HighlightWithShortcut = Highlight.extend({
   },
 });
 
-function NoteEditor({ onEditorReady }) {
+function NoteEditor({ onEditorReady, contentToLoad }) {
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
@@ -103,14 +103,22 @@ function NoteEditor({ onEditorReady }) {
       HighlightWithShortcut,
       TabIndent,
     ],
-    content: "",
+    content: "", // initial empty
   });
 
+  // pass editor back to parent once it's ready
   useEffect(() => {
     if (editor && onEditorReady) {
       onEditorReady(editor);
     }
   }, [editor, onEditorReady]);
+
+  // set new content from props when available
+  useEffect(() => {
+    if (editor && contentToLoad) {
+      editor.commands.setContent(contentToLoad);
+    }
+  }, [editor, contentToLoad]);
 
   return (
     <div
