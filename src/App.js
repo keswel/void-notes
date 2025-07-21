@@ -1,17 +1,6 @@
-import React, { useState } from "react";
-import NoteEditor from "./components/NoteEditor";
-import StyledButton from "./components/StyledButton";
-import Header from "./components/Header";
+import VoidEditor from "./components/VoidEditor.jsx";
 
 function App() {
-  const [editor, setEditor] = useState(null);
-  const [contentToLoad, setContentToLoad] = useState(null);
-  
-  const handleLoadContent = (json) => {
-    setContentToLoad(json);
-  };
-  
-  // TODO:
   /**
    * [ ] UPDATE INIT TEXT WITH:
    * void notes:
@@ -26,14 +15,7 @@ function App() {
    */
   
   return (
-    <div style={{ padding: "2rem", position: "relative", maxWidth: "700px", margin: "auto" }}>
-      {/* main editor stack */}
-      <div>
-        <Header onLoadContent={handleLoadContent} editor={editor}/>
-        <NoteEditor onEditorReady={setEditor} contentToLoad={contentToLoad} />
-        <StyledButton editor={editor} />
-      </div>
-    </div>
+    <VoidEditor />
   );
 }
 
