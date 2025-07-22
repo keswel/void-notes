@@ -21,8 +21,12 @@ function VoidEditor() {
                 editor={editor} 
                 title={title} 
                 setTitle={setTitle}/>
-        <NoteEditor onEditorReady={setEditor} contentToLoad={contentToLoad} />
-        <StyledButton editor={editor} title={title} />
+
+        <NoteEditor onEditorReady={setEditor} 
+                    contentToLoad={contentToLoad} />
+
+        <StyledButton editor={editor} 
+                      title={title} />
       </div>
     </div>
   );

@@ -8,13 +8,13 @@
 }
 
 body.dark {
-  --primary-color: #3e2f2f;     /* deep espresso brown */
-  --bg-color: #1d1515;          /* dark roast background */
+  --primary-color: #3e2f2f;     /* deep brown */
+  --bg-color: #1d1515;          /* dark background */
   --text-color: #e0cfc2;        /* cream text */
   --button-bg: #6e4e37;         /* mocha brown for buttons */
-  --button-text: #f6f0e8;       /* light pastel cream */
+  --button-text: #f6f0e8;       /* light cream color */
   --code-background: #3e2f2f8f;
-  --accent-color: #a67c6b;      /* dusty rose accent */
+  --accent-color: #a67c6b;      /* dusty accent */
   --border-color: #4d3b3b;      /* slightly lighter than background */
 
   transition: all 0.2s ease-in-out;

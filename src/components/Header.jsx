@@ -61,7 +61,7 @@ function Header({ onLoadContent, editor, title, setTitle }) {
         }}
       >
         <ThemeButton />
-        <LoadNoteButton onLoadContent={onLoadContent} title={title} />
+        <LoadNoteButton onLoadContent={onLoadContent} handleTitleChange={handleTitleChange} />
         <button
           style={{
             backgroundColor: '#6b4f26',

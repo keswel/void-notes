@@ -51,11 +51,15 @@ function SaveFile({ editor, title }) {
       return;
     }
 
-    // combine title and content into one object
+    
+    const noteToSave = content;
+    /* combine title and content into one object
+       DISABLED FOR NOW. 
     const noteToSave = {
       // title: title,
       content: content,
     };
+    */
 
     const jsonString = JSON.stringify(noteToSave, null, 2);
     const blob = new Blob([jsonString], { type: "application/json" });
