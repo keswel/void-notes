@@ -31,18 +31,19 @@ const getHoverStyle = (isHovered, baseColor, hoverColor) => ({
 });
 
 // save Button
-function SaveFile({ editor }) {
+function SaveFile({ editor, title }) {
   const [isHovered, setIsHovered] = React.useState(false);
 
   const handleSave = () => {
     console.log("Save button clicked!");
+    console.log("The current title is: " + title);
 
     if (!editor) {
       console.log("Editor is null/undefined");
       return;
     }
 
-    const content = editor.getJSON(); // full structured doc
+    const content = editor.getJSON(); 
     const isEmpty = !content || !content.content || content.content.length === 0;
 
     if (isEmpty) {
@@ -50,7 +51,13 @@ function SaveFile({ editor }) {
       return;
     }
 
-    const jsonString = JSON.stringify(content, null, 2);
+    // combine title and content into one object
+    const noteToSave = {
+      title: title,
+      content: content,
+    };
+
+    const jsonString = JSON.stringify(noteToSave, null, 2);
     const blob = new Blob([jsonString], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
@@ -109,7 +116,7 @@ function ClearButton({ editor }) {
   );
 }
 
-// share Button
+// share button
 function ShareButton() {
   const [isHovered, setIsHovered] = React.useState(false);
 
@@ -132,7 +139,7 @@ function ShareButton() {
 }
 
 // main button bar
-function StyledButton({ editor }) {
+function StyledButton({ editor, title }) {
   return (
     <div
       style={{
@@ -149,7 +156,7 @@ function StyledButton({ editor }) {
         justifyContent: "center",
       }}
     >
-      <SaveFile editor={editor} />
+      <SaveFile editor={editor} title={title} />
       <ClearButton editor={editor} />
       <ShareButton />
     </div>

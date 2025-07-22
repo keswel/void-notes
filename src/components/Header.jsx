@@ -4,8 +4,7 @@ import LoadNoteButton from './LoadNoteButton';
 import TitleText from './TitleText';
 import React, { useState } from 'react';
 
-function Header({ onLoadContent, editor }) {
-  const [title, setTitle] = useState('title');  // initial title state
+function Header({ onLoadContent, editor, title, setTitle }) {
 
   const handleClear = () => {
     if (editor) {

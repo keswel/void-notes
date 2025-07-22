@@ -11,13 +11,18 @@ function VoidEditor() {
     setContentToLoad(json);
   };
 
+  const [title, setTitle] = useState('title');  // initial title state
+
   return (
     <div style={{ padding: "2rem", position: "relative", maxWidth: "700px", margin: "auto" }}>
       {/* main editor stack */}
       <div>
-        <Header onLoadContent={handleLoadContent} editor={editor}/>
+        <Header onLoadContent={handleLoadContent} 
+                editor={editor} 
+                title={title} 
+                setTitle={setTitle}/>
         <NoteEditor onEditorReady={setEditor} contentToLoad={contentToLoad} />
-        <StyledButton editor={editor} />
+        <StyledButton editor={editor} title={title} />
       </div>
     </div>
   );
