@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { Upload } from 'lucide-react';
 
-function LoadNoteButton({ onLoadContent, handleTitleChange}) {
+function LoadNoteButton({ onLoadContent, onChangeTitle}) {
   const fileInputRef = useRef();
   
   const handleFileChange = (event) => {
@@ -21,8 +21,8 @@ function LoadNoteButton({ onLoadContent, handleTitleChange}) {
           }
           
           // send title separately to parent
-          if (handleTitleChange) {
-            handleTitleChange = titleFromFilename;
+          if (onChangeTitle) {
+            onChangeTitle(titleFromFilename); 
           }
         } catch (err) {
           alert("Invalid JSON file");
