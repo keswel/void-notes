@@ -2,7 +2,7 @@ import { FileText, Plus } from 'lucide-react';
 import ThemeButton from './ThemeButton';
 import LoadNoteButton from './LoadNoteButton';
 import TitleText from './TitleText';
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 
 function Header({ onLoadContent, editor, title, setTitle }) {
 
@@ -61,7 +61,7 @@ function Header({ onLoadContent, editor, title, setTitle }) {
         }}
       >
         <ThemeButton />
-        <LoadNoteButton onLoadContent={onLoadContent} />
+        <LoadNoteButton onLoadContent={onLoadContent} title={title} />
         <button
           style={{
             backgroundColor: '#6b4f26',

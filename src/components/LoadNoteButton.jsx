@@ -1,18 +1,29 @@
+// LoadNoteButton.js
 import React, { useRef } from 'react';
 import { Upload } from 'lucide-react';
 
-function LoadNoteButton({ onLoadContent }) {
+function LoadNoteButton({ onLoadContent, onLoadTitle }) {
   const fileInputRef = useRef();
-
+  
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
+      // extract title from filename (remove .json extension)
+      const titleFromFilename = file.name.replace(/\.json$/, '');
+      
       const reader = new FileReader();
       reader.onload = (e) => {
         try {
-          const json = JSON.parse(e.target.result);
+          const content = JSON.parse(e.target.result);
+          
+          // Send content to TipTap
           if (onLoadContent) {
-            onLoadContent(json); // send JSON to parent
+            onLoadContent(content);
+          }
+          
+          // Send title separately to parent
+          if (onLoadTitle) {
+            onLoadTitle(titleFromFilename);
           }
         } catch (err) {
           alert("Invalid JSON file");
@@ -21,11 +32,11 @@ function LoadNoteButton({ onLoadContent }) {
       reader.readAsText(file);
     }
   };
-
+  
   const handleButtonClick = () => {
     fileInputRef.current.click();
   };
-
+  
   return (
     <>
       <input

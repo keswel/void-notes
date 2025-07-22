@@ -33,7 +33,7 @@ const getHoverStyle = (isHovered, baseColor, hoverColor) => ({
 // save Button
 function SaveFile({ editor, title }) {
   const [isHovered, setIsHovered] = React.useState(false);
-
+  // NOTE DONT SAVE THE TITLE TO JSON. SAVE THE TITLE AS THE NAME OF THE .JSON ! ! !
   const handleSave = () => {
     console.log("Save button clicked!");
     console.log("The current title is: " + title);
@@ -53,7 +53,7 @@ function SaveFile({ editor, title }) {
 
     // combine title and content into one object
     const noteToSave = {
-      title: title,
+      // title: title,
       content: content,
     };
 
@@ -62,9 +62,7 @@ function SaveFile({ editor, title }) {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
 
-    const now = new Date();
-    const timestamp = now.toISOString().slice(0, 19).replace(/:/g, "-");
-    link.download = `note-${timestamp}.json`;
+    link.download = `${title}.json`;
     link.href = url;
 
     document.body.appendChild(link);
