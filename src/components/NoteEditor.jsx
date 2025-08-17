@@ -31,6 +31,22 @@ lowlight.register("bash", bash);
 lowlight.register("java", java);
 lowlight.register("cpp", cpp);
 
+const funFacts = [
+  "Honey never spoils, even centuries...",
+  "Octopuses have three beating hearts...",
+  "Bananas are berries, surprisingly true...",
+  "Octopuses have three hearts...",
+  "Sea otters hold hands sleeping...",
+  "Sloths can hold breath underwater...",
+  "Koalas have fingerprints like humans...",
+  "Pineapples take two years growing...",
+  "Sharks existed before trees appeared...",
+  "Cows have best friends, seriously..."
+];
+function getRandomFunFact() {
+  const index = Math.floor(Math.random() * funFacts.length);
+  return funFacts[index];
+}
 
 // tab indent extension
 const TabIndent = Extension.create({
@@ -98,7 +114,7 @@ function NoteEditor({ onEditorReady, contentToLoad }) {
         defaultLanguage: "javascript",
       }),
       Placeholder.configure({
-        placeholder: "Start typing...",
+        placeholder: getRandomFunFact(), 
       }),
       HighlightWithShortcut,
       TabIndent,
