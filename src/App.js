@@ -12,7 +12,20 @@ function App() {
    */
   
   return (
-    <VoidEditor />
+    <div style={{ position: 'relative', height: '100vh' }}>
+      {/* VoidEditor centered */}
+      <div style={{ 
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '60%'
+      }}>
+        <VoidEditor />
+      </div>
+
+      {/* Other content won't affect VoidEditor */}
+    </div>
   );
 }
 

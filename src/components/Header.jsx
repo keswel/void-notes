@@ -43,6 +43,7 @@ function Header({ onLoadContent, editor, title, setTitle }) {
           gap: '10px',
           fontSize: '2rem',
           color: '#6b4f26',
+          padding: '10px',
           userSelect: 'none',
           margin: 0,
         }}
