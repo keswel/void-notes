@@ -1,4 +1,5 @@
 import VoidEditor from "./components/VoidEditor.jsx";
+import UserAccount from "./components/UserAccount.jsx";
 
 function App() {
   /*
@@ -13,13 +14,17 @@ function App() {
   
   return (
     <div style={{ position: 'relative', height: '100vh' }}>
+
+      {/* Login Buttons */}
+      <UserAccount />
+    
       {/* VoidEditor centered */}
       <div style={{ 
         position: 'absolute',
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: '60%'
+        width: '90%'
       }}>
         <VoidEditor />
       </div>

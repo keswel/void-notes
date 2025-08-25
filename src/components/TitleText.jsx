@@ -8,7 +8,6 @@ function TitleText({ title, onChangeTitle }) {
   const handleChange = (e) => {
     onChangeTitle(e.target.value);  // notify parent about change
   };
-
   return (
     <div>
       {editing ? (
@@ -26,13 +25,15 @@ function TitleText({ title, onChangeTitle }) {
         />
       ) : (
         <p
-          onClick={() => setEditing(true)}
+          onClick={() => 
+            setEditing(true)
+          }
           style={{
             fontSize: '16px',
             border: '1px dashed transparent',
             cursor: 'pointer',
           }}
-          onMouseOver={(e) => (e.currentTarget.style.border = '1px dashed #aaa')}
+          onMouseOver={(e) => (e.currentTarget.style.border = '1px dashed #aaa') }
           onMouseOut={(e) => (e.currentTarget.style.border = '1px dashed transparent')}
         >
           {title}

@@ -24,8 +24,6 @@ function ThemeButton() {
         color: 'white',
         fontSize: '1.2rem',
         transition: 'background-color 0.3s ease, color 0.3s ease',
-        width: '40px',
-        height: '40px',
       }}
     >
       {isDark ? (
