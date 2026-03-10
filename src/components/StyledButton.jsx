@@ -141,26 +141,31 @@ function ShareButton() {
 }
 
 // main button bar
-function StyledButton({ editor, title }) {
+function StyledButton({ editor, title, char_count }) {
   return (
-    <div
-      style={{
-        display: "flex",
-        gap: "12px",
-        alignItems: "center",
-        padding: "16px 20px",
-        backgroundColor: "--bg-color",
-        borderTop: "none",
-        border: "1px solid #e5e5e7",
-        borderBottomLeftRadius: "12px",
-        borderBottomRightRadius: "12px",
-        boxShadow: "0 8px 25px rgba(0, 0, 0, 0.08)",
-        justifyContent: "center",
-      }}
-    >
-      <SaveFile editor={editor} title={title} />
-      <ClearButton editor={editor} />
-      <ShareButton />
+    <div>
+      <div
+        style={{
+          display: "flex",
+          gap: "12px",
+          alignItems: "center",
+          padding: "16px 20px",
+          backgroundColor: "--bg-color",
+          borderTop: "none",
+          border: "1px solid #e5e5e7",
+          borderBottomLeftRadius: "12px",
+          borderBottomRightRadius: "12px",
+          boxShadow: "0 8px 25px rgba(0, 0, 0, 0.08)",
+          justifyContent: "center",
+        }}
+      >
+        <SaveFile editor={editor} title={title} />
+        <ClearButton editor={editor} />
+        <ShareButton />
+        <div>
+          <p>{char_count}</p>
+        </div>
+      </div>
     </div>
   );
 }

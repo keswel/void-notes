@@ -13,23 +13,34 @@ function App() {
    */
   
   return (
-    <div style={{ position: 'relative', height: '100vh' }}>
-
-      {/* Login Buttons */}
-      <UserAccount />
-    
-      {/* VoidEditor centered */}
-      <div style={{ 
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: '90%'
+    <div style={{ display: 'flex', height: '100vh' }}>
+      
+      { /* Left Sidebar | needs work, disabled for now   
+      <div style={{
+        width: '10%',
+        minWidth: '150px',
+        backgroundColor: '#f5f5f5', // optional
+        padding: '1rem',
+        boxShadow: '2px 0 5px rgba(0,0,0,0.1)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
       }}>
-        <VoidEditor />
+        <UserAccount />
       </div>
+      */ } 
 
-      {/* Other content won't affect VoidEditor */}
+      {/* Main content area */}
+      <div style={{
+        flexGrow: 1,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
+        <div style={{ width: '90%' }}>
+          <VoidEditor />
+        </div>
+      </div>
     </div>
   );
 }
